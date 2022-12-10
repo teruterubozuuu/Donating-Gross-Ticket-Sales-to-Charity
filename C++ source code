@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#define MAX_NAME_LEN 60
+using namespace std;
+
+int main()
+{
+    char movieName[MAX_NAME_LEN];
+    double adultTicket, childTicket, aTicketsold, cTicketsold, percentGross;
+    cout<< "Please fill in the necessary details below.\n";
+    cout << "\nMovie name: ";
+    cin.getline(movieName,MAX_NAME_LEN);
+    cout << "Adult Ticket Price: $";
+    cin >> adultTicket;
+    cout << "Child Ticket Price: $";
+    cin >> childTicket;
+    cout << "Number of Adult Tickets sold: ";
+    cin>> aTicketsold;
+    cout << "Number of Child Tickets sold: ";
+    cin >> cTicketsold;
+    cout << "Percentage of gross amount to be donated: ";
+    cin >> percentGross;
+
+    cout << "\n\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*\n";
+    cout << "\n\tMovie Name............................ "<<movieName<<endl;
+    cout << "\tNumber of Tickets sold................ " <<fixed<<setprecision(0)<< aTicketsold + cTicketsold << endl;
+    cout << "\tGross Amount.......................... $" <<fixed<<setprecision(2)<< ((adultTicket + childTicket)+(aTicketsold + cTicketsold)) << endl;
+    cout << "\tPercentage of Gross Amount Donated.... " << fixed << setprecision(2) << percentGross <<"%"<< endl;
+    cout << "\tAmount Donated........................ $" << fixed << setprecision(2) << ((adultTicket + childTicket)+(aTicketsold + cTicketsold))/percentGross <<endl;
+    cout << "\tNet Sale:............................. $" << fixed << setprecision(2) << ((adultTicket + childTicket)+(aTicketsold + cTicketsold)) - (((adultTicket + childTicket)+(aTicketsold + cTicketsold))/percentGross) << endl;
+    cout << "\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*";
+
+    return 0;
+}
